@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>斗狠-热血硬核动作漫画专题与角色深度解析</title>
+    <meta name="description" content="斗狠专题站，聚焦硬核动作漫画、热血战斗番与狠角色图鉴。深入解读斗狠精神内核，推荐高分燃向作品，剖析经典对决名场面，带你领略极致的力量碰撞与意志较量。">
+    <meta name="keywords" content="斗狠,硬核漫画,热血战斗,狠角色,动作番,燃向推荐,漫画解析,对决名场面">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+            background-color: #0b0b10;
+            color: #d9d9e3;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== 页眉 ===== */
+        .site-header {
+            background: #101018;
+            border-bottom: 1px solid #2a2a3a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(6px);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(145deg, #e23b3b, #7a0f0f);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 20px;
+            color: #fff;
+            box-shadow: 0 0 12px rgba(226, 59, 59, 0.5);
+        }
+
+        .site-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .site-name span {
+            color: #e23b3b;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        .main-nav a {
+            font-weight: 600;
+            font-size: 0.98rem;
+            color: #b9b9c9;
+            transition: color 0.2s;
+            padding: 6px 2px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #fff;
+            border-bottom-color: #e23b3b;
+        }
+
+        .header-action {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .search-box {
+            background: #1c1c26;
+            border-radius: 30px;
+            padding: 6px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #2e2e3c;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #e0e0ea;
+            width: 140px;
+            font-size: 0.9rem;
+        }
+
+        .search-box input::placeholder {
+            color: #6a6a7c;
+        }
+
+        .btn-red {
+            background: linear-gradient(135deg, #d32f2f, #8b1a1a);
+            color: #fff;
+            font-weight: 700;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(200, 30, 30, 0.25);
+        }
+
+        .btn-red:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(200, 30, 30, 0.4);
+        }
+
+        /* ===== 首屏 ===== */
+        .hero {
+            background: radial-gradient(ellipse at 20% 20%, #1c1c2a 0%, #0b0b10 80%);
+            padding: 60px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -100px;
+            top: 20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(200, 30, 30, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-copy h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1.15;
+            color: #fff;
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .hero-copy h1 .highlight {
+            background: linear-gradient(90deg, #ff5a5a, #b71c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            color: #b5b5c8;
+            max-width: 540px;
+            margin-bottom: 28px;
+            border-left: 3px solid #e23b3b;
+            padding-left: 18px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #3a3a4e;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #c9c9db;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 10px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item strong {
+            display: block;
+            font-size: 2rem;
+            color: #fff;
+            font-weight: 800;
+        }
+
+        .stat-item span {
+            font-size: 0.85rem;
+            color: #8888a0;
+        }
+
+        .hero-visual {
+            background: linear-gradient(145deg, #181822, #0f0f18);
+            border-radius: 16px;
+            padding: 32px 24px;
+            border: 1px solid #2a2a3a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .visual-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .visual-card-header h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .visual-card-header .badge {
+            background: #e23b3b;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        .character-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .character-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            padding: 12px 14px;
+            border: 1px solid #242433;
+            transition: background 0.2s;
+        }
+
+        .character-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .char-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3a3a4e, #1c1c28);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #fff;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            border: 2px solid #e23b3b;
+        }
+
+        .char-info {
+            flex: 1;
+        }
+
+        .char-info strong {
+            display: block;
+            color: #fff;
+            font-size: 0.95rem;
+        }
+
+        .char-info span {
+            font-size: 0.8rem;
+            color: #8888a0;
+        }
+
+        .char-power {
+            font-size: 0.8rem;
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+
+        /* ===== 栏目区 ===== */
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-alt {
+            background: #0f0f18;
+            border-top: 1px solid #1e1e2a;
+            border-bottom: 1px solid #1e1e2a;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-bottom: 36px;
+            border-bottom: 1px solid #2a2a3a;
+            padding-bottom: 18px;
+        }
+
+        .section-head h2 {
+            font-size: 1.9rem;
+            color: #fff;
+            font-weight: 800;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .section-head h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 6px;
+            height: 28px;
+            background: #e23b3b;
+            border-radius: 4px;
+        }
+
+        .section-head .sub {
+            color: #8888a0;
+            font-size: 0.9rem;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .comic-card {
+            background: #15151f;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #23232f;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .comic-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+        }
+
+        .comic-thumb {
+            height: 180px;
+            background: linear-gradient(145deg, #262636, #15151f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid #e23b3b;
+        }
+
+        .comic-thumb .thumb-label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+
+        .comic-thumb .rating {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: #e23b3b;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        .comic-info {
+            padding: 18px;
+        }
+
+        .comic-info h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .comic-info p {
+            font-size: 0.9rem;
+            color: #9a9ab0;
+            line-height: 1.5;
+            margin-bottom: 14px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .comic-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #6e6e85;
+            border-top: 1px solid #23232f;
+            padding-top: 12px;
+        }
+
+        .comic-meta .status {
+            color: #4caf50;
+            font-weight: 600;
+        }
+
+        /* ===== 双栏内容区 ===== */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .content-block {
+            background: #15151f;
+            border-radius: 14px;
+            padding: 30px;
+            border: 1px solid #23232f;
+        }
+
+        .content-block h3 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #2a2a3a;
+            position: relative;
+        }
+
+        .content-block h3::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #e23b3b;
+        }
+
+        .content-block p {
+            margin-bottom: 16px;
+            color: #b5b5c8;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .feature-list li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 14px;
+            border-radius: 8px;
+            border-left: 3px solid #e23b3b;
+        }
+
+        .feature-list strong {
+            color: #fff;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .feature-list span {
+            font-size: 0.85rem;
+            color: #9a9ab0;
+        }
+
+        /* ===== 排行榜 ===== */
+        .rank-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid #1e1e2a;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #3a3a4e;
+            width: 50px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .rank-item:nth-child(1) .rank-num,
+        .rank-item:nth-child(2) .rank-num,
+        .rank-item:nth-child(3) .rank-num {
+            color: #e23b3b;
+        }
+
+        .rank-content {
+            flex: 1;
+        }
+
+        .rank-content strong {
+            display: block;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .rank-content span {
+            font-size: 0.85rem;
+            color: #8888a0;
+        }
+
+        .rank-score {
+            font-weight: 800;
+            color: #ffb74d;
+            font-size: 1.1rem;
+        }
+
+        /* ===== 推荐区 ===== */
+        .recommend-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .rec-item {
+            background: linear-gradient(145deg, #181822, #101018);
+            border-radius: 14px;
+            padding: 28px;
+            border: 1px solid #262636;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+
+        .rec-item:hover {
+            border-color: #e23b3b;
+        }
+
+        .rec-tag {
+            display: inline-block;
+            background: rgba(226, 59, 59, 0.2);
+            color: #ff6b6b;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+        }
+
+        .rec-item h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .rec-item p {
+            color: #9a9ab0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #101018;
+            border: 1px solid #23232f;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-q {
+            padding: 20px 24px;
+            font-weight: 700;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #15151f;
+            transition: background 0.2s;
+        }
+
+        .faq-q:hover {
+            background: #1a1a26;
+        }
+
+        .faq-q .icon {
+            font-size: 1.4rem;
+            color: #e23b3b;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .faq-a {
+            padding: 0 24px 20px;
+            color: #b5b5c8;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-a {
+            display: block;
+        }
+
+        /* ===== 页脚 ===== */
+        .site-footer {
+            background: #0a0a0e;
+            border-top: 1px solid #1e1e2a;
+            padding: 50px 0 30px;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand .logo-icon {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: #7a7a90;
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #7a7a90;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            border-top: 1px solid #1e1e2a;
+            padding-top: 24px;
+            text-align: center;
+            color: #5a5a70;
+            font-size: 0.85rem;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 1024px) {
+            .section-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .recommend-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-copy h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                display: none;
+            }
+            .header-inner {
+                height: 64px;
+            }
+            .search-box {
+                display: none;
+            }
+            .section-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .split-layout {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .recommend-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero {
+                padding: 40px 0 60px;
+            }
+            .hero-copy h1 {
+                font-size: 2.4rem;
+            }
+            .section {
+                padding: 50px 0;
+            }
+            .section-head {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 0 18px;
+            }
+            .btn-red {
+                padding: 6px 16px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo-area">
+            <div class="logo-icon">狠</div>
+            <div class="site-name">斗狠<span>·</span>硬核</div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">漫画库</a></li>
+                <li><a href="#">角色图鉴</a></li>
+                <li><a href="#">名场面</a></li>
+                <li><a href="#">排行榜</a></li>
+                <li><a href="#">专题</a></li>
+            </ul>
+        </nav>
+        <div class="header-action">
+            <div class="search-box">
+                <span style="color:#888">⌕</span>
+                <input type="text" placeholder="搜索作品/角色">
+            </div>
+            <button class="btn-red">登录</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- 首屏 -->
+    <section class="hero">
+        <div class="container hero-layout">
+            <div class="hero-copy">
+                <h1>斗狠<span class="highlight">，</span>是意志的极限碰撞</h1>
+                <p class="hero-desc">不止是拳头与刀刃的对决，更是信念、尊严与生存法则的终极较量。这里收录最硬核的动作漫画与最令人肾上腺素飙升的狠角色。</p>
+                <div class="hero-tags">
+                    <span class="tag">#硬核格斗</span>
+                    <span class="tag">#以暴制暴</span>
+                    <span class="tag">#热血复仇</span>
+                    <span class="tag">#极限生存</span>
+                    <span class="tag">#黑道争锋</span>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <strong>300+</strong>
+                        <span>硬核作品收录</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>1500+</strong>
+                        <span>狠角色档案</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>50+</strong>
+                        <span>深度专题策划</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card-header">
+                    <h3>🔥 本周狠角色 TOP 榜</h3>
+                    <span class="badge">实时更新</span>
+                </div>
+                <div class="character-list">
+                    <div class="character-row">
+                        <div class="char-avatar">龙</div>
+                        <div class="char-info">
+                            <strong>陈九龙</strong>
+                            <span>《九龙战纪》 · 拳霸</span>
+                        </div>
+                        <span class="char-power">战力 ★★★★★</span>
+                    </div>
+                    <div class="character-row">
+                        <div class="char-avatar">蛇</div>
+                        <div class="char-info">
+                            <strong>毒蛇</strong>
+                            <span>《暗巷》 · 杀手</span>
+                        </div>
+                        <span class="char-power">战力 ★★★★★</span>
+                    </div>
+                    <div class="character-row">
+                        <div class="char-avatar">虎</div>
+                        <div class="char-info">
+                            <strong>赵悍</strong>
+                            <span>《东北往事》 · 枭雄</span>
+                        </div>
+                        <span class="char-power">战力 ★★★★☆</span>
+                    </div>
+                    <div class="character-row">
+                        <div class="char-avatar">刃</div>
+                        <div class="char-info">
+                            <strong>冷刃</strong>
+                            <span>《极道》 · 剑客</span>
+                        </div>
+                        <span class="char-power">战力 ★★★★★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 热门斗狠漫画 -->
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <h2>热门斗狠漫画</h2>
+                <span class="sub">每一部都是硬核中的硬核</span>
+            </div>
+            <div class="section-grid">
+                <div class="comic-card">
+                    <div class="comic-thumb">
+                        <span style="font-size:3.5rem; color:#3a3a4e;">⚔️</span>
+                        <span class="thumb-label">连载中</span>
+                        <span class="rating">9.4分</span>
+                    </div>
+                    <div class="comic-info">
+                        <h3>九龙战纪</h3>
+                        <p>地下拳场的绝对霸主陈九龙，为守护兄弟与尊严，一人单挑整个黑暗势力。拳拳到肉，血脉偾张。</p>
+                        <div class="comic-meta">
+                            <span>格斗 · 热血</span>
+                            <span class="status">🔥 热</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comic-card">
+                    <div class="comic-thumb">
+                        <span style="font-size:3.5rem; color:#3a3a4e;">🥷</span>
+                        <span class="thumb-label">已完结</span>
+                        <span class="rating">9.1分</span>
+                    </div>
+                    <div class="comic-info">
+                        <h3>暗巷</h3>
+                        <p>顶级杀手毒蛇，深陷黑帮设下的陷阱。以暴制暴，以杀止杀，暗巷之中无人能挡。</p>
+                        <div class="comic-meta">
+                            <span>杀手 · 复仇</span>
+                            <span class="status">经典</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comic-card">
+                    <div class="comic-thumb">
+                        <span style="font-size:3.5rem; color:#3a3a4e;">🐅</span>
+                        <span class="thumb-label">连载中</span>
+                        <span class="rating">8.8分</span>
+                    </div>
+                    <div class="comic-info">
+                        <h3>东北往事</h3>
+                        <p>改革浪潮下的黑道风云，赵悍从底层一路杀伐决断，书写枭雄的传奇人生。</p>
+                        <div class="comic-meta">
+                            <span>黑道 · 年代</span>
+                            <span class="status">🔥 热</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="comic-card">
+                    <div class="comic-thumb">
+                        <span style="font-size:3.5rem; color:#3a3a4e;">🗡️</span>
+                        <span class="thumb-label">连载中</span>
+                        <span class="rating">9.0分</span>
+                    </div>
+                    <div class="comic-info">
+                        <h3>极道</h3>
+                        <p>冷刃被组织背叛，身负重伤却以一剑之威，斩开整个极道世界的黑暗。</p>
+                        <div class="comic-meta">
+                            <span>剑客 · 复仇</span>
+                            <span class="status">新作</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 双栏内容 -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-head">
+                <h2>斗狠精神内核</h2>
+                <span class="sub">为什么我们会被"狠"吸引</span>
+            </div>
+            <div class="split-layout">
+                <div class="content-block">
+                    <h3>真正的"狠"是什么</h3>
+                    <p>"斗狠"并非单纯崇尚暴力。在优秀的作品里，狠是一种被逼到绝境后的反弹力，是面对强权时的不低头，是保护至亲时的决绝。</p>
+                    <p>那些令人记忆深刻的狠角色，往往都背负着沉重的过往。他们的拳头挥向的，是命运的不公；他们染血的衣襟下，藏着最深的情义。</p>
+                    <ul class="feature-list">
+                        <li>
+                            <div>
+                                <strong>对敌人的狠——绝不手软</strong>
+                                <span>在弱肉强食的规则下，善良需要锋芒。对敌人仁慈，就是对自己人残忍。</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>对自己的狠——极限突破</strong>
+                                <span>真正的强者，敢于对自己下狠手。突破生理与心理的极限，才能站上巅峰。</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>对命运的抗争——绝不认命</strong>
+                                <span>斗狠的本质，是不向命运低头的骨气。哪怕遍体鳞伤，也要撕开一道口子。</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <h3>斗狠漫画人气榜</h3>
+                    <div class="rank-list">
+                        <div class="rank-item">
+                            <span class="rank-num">01</span>
+                            <div class="rank-content">
+                                <strong>九龙战纪</strong>
+                                <span>霸主归来 · 拳拳到肉</span>
+                            </div>
+                            <span class="rank-score">9.4</span>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-num">02</span>
+                            <div class="rank-content">
+                                <strong>极道</strong>
+                                <span>一剑破万法</span>
+                            </div>
+                            <span class="rank-score">9.2</span>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-num">03</span>
+                            <div class="rank-content">
+                                <strong>暗巷</strong>
+                                <span>暗夜杀神</span>
+                            </div>
+                            <span class="rank-score">9.0</span>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-num">04</span>
+                            <div class="rank-content">
+                                <strong>东北往事</strong>
+                                <span>枭雄崛起</span>
+                            </div>
+                            <span class="rank-score">8.8</span>
+                        </div>
+                        <div class="rank-item">
+                            <span class="rank-num">05</span>
+                            <div class="rank-content">
+                                <strong>血路</strong>
+                                <span>向死而生</span>
+                            </div>
+                            <span class="rank-score">8.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 编辑推荐 -->
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <h2>斗狠专题 · 编辑精选</h2>
+                <span class="sub">深度解读，不止于打斗</span>
+            </div>
+            <div class="recommend-grid">
+                <div class="rec-item">
+                    <span class="rec-tag">深度解析</span>
+                    <h3>狠角色的成长弧光</h3>
+                    <p>从街头混混到一方霸主，剖析那些经典狠角色背后的人物塑造逻辑。他们为何而战？又为何而狠？通过对比《九龙战纪》与《东北往事》的叙事手法，带你看到斗狠题材的深度。</p>
+                </div>
+                <div class="rec-item">
+                    <span class="rec-tag">名场面</span>
+                    <h3>教科书级打斗设计</h3>
+                    <p>分镜如何制造压迫感？动作设计如何体现角色性格？我们拆解《极道》中冷刃以一敌百的经典场面，从镜头语言到节奏把控，感受硬核战斗的视觉冲击力。</p>
+                </div>
+                <div class="rec-item">
+                    <span class="rec-tag">文化观察</span>
+                    <h3>斗狠背后的江湖道义</h3>
+                    <p>斗狠题材为何在东亚文化圈长盛不衰？它折射了怎样的社会心理与男性气质想象？从漫画中的帮派规则，看现实中的秩序与反抗。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新人入门 -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-head">
+                <h2>斗狠漫画入坑指南</h2>
+                <span class="sub">新手也能快速找到心头好</span>
+            </div>
+            <div class="split-layout">
+                <div class="content-block">
+                    <h3>按口味选择</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <div>
+                                <strong>喜欢拳拳到肉的格斗</strong>
+                                <span>推荐《九龙战纪》《血路》。大量近身肉搏、擂台对决，动作设计扎实，画面冲击力强。</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>偏爱刀光剑影的杀伐</strong>
+                                <span>推荐《极道》《暗巷》。武器对决与暗杀场景为主，氛围更冷峻，带有悬疑色彩。</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>想看时代枭雄的传奇</strong>
+                                <span>推荐《东北往事》。剧情格局更大，涉及时代变迁、帮派权谋，斗狠是手段而非目的。</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="content-block">
+                    <h3>阅读小贴士</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <div>
+                                <strong>关注世界观设定</strong>
+                                <span>很多斗狠漫画不只是打斗，背后有完整的势力版图和规则。了解设定，观感提升一半。</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>留意角色动机</strong>
+                                <span>每个狠角色的背后都有故事。试着理解他们的选择，比单纯看胜负更有意思。</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <strong>适度阅读，理性看待</strong>
+                                <span>作品中的暴力是艺术表达。现实中的冲突应通过法律与理性解决，切勿模仿。</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <h2>常见问题</h2>
+                <span class="sub">你想知道的都在这里</span>
+            </div>
+            <div class="faq-wrap">
+                <div class="faq-item active">
+                    <div class="faq-q">斗狠漫画和普通热血漫画有什么区别？<span class="icon">−</span></div>
+                    <div class="faq-a">斗狠题材更强调角色的"狠劲"——即在极端压力下展现出的攻击性与决断力。它往往带有更强烈的现实色彩或黑道背景，战斗的痛感和代价更加真实，角色不是单纯为了正义而战，更多是为了生存、尊严或复仇。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">这些漫画适合未成年人阅读吗？<span class="icon">+</span></div>
+                    <div class="faq-a">大部分斗狠漫画含有暴力、流血、黑帮等成人化元素，建议成年读者阅读。如果是未成年读者，建议在家长指导下选择内容相对克制的作品，并理解作品中的暴力描写是艺术虚构。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">有哪些国产斗狠漫画值得推荐？<span class="icon">+</span></div>
+                    <div class="faq-a">国产斗狠漫画近年来涌现出不少佳作，例如《东北往事》系列改编漫画、《九龙战纪》等。它们结合了本土文化背景，在斗狠之余展现了特定时代和社会环境下的江湖生态，具有独特的现实质感。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">如何评价一部斗狠漫画的优劣？<span class="icon">+</span></div>
+                    <div class="faq-a">可以从三个维度判断：一是打斗分镜的流畅度和冲击力；二是角色塑造是否立体，狠劲背后是否有合理动机；三是故事内核是否深刻，是否只是无意义的暴力堆砌。真正优秀的作品，斗狠只是外壳，内里是对人性与命运的探讨。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-icon" style="width:36px; height:36px; font-size:18px;">狠</div>
+                <p>斗狠硬核——专注于硬核动作漫画与狠角色文化的垂直社区。我们相信，真正的狠劲，是面对逆境时永不低头的勇气。</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">漫画分类</a></li>
+                    <li><a href="#">角色图鉴</a></li>
+                    <li><a href="#">新作速递</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站介绍</a></li>
+                    <li><a href="#">投稿/合作</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 斗狠硬核 DouHen. All rights reserved. 本站内容仅供爱好者交流，部分素材来源于网络，侵权请联系删除。</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // FAQ 折叠交互
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+        var question = item.querySelector('.faq-q');
+        question.addEventListener('click', function() {
+            var isActive = item.classList.contains('active');
+            // 关闭所有
+            document.querySelectorAll('.faq-item').forEach(function(i) {
+                i.classList.remove('active');
+                i.querySelector('.icon').textContent = '+';
+            });
+            // 如果之前没打开，则打开当前
+            if (!isActive) {
+                item.classList.add('active');
+                item.querySelector('.icon').textContent = '−';
+            }
+        });
+    });
+</script>
+
+</body>
+  </html>
