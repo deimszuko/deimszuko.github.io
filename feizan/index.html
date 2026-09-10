@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞赞-同性社交与同志生活分享平台</title>
+    <meta name="description" content="飞赞是一个专注于同志社群的社交与内容分享平台，提供交友、动态、话题讨论、活动组织等功能，帮助用户连接彼此，分享生活。">
+    <meta name="keywords" content="飞赞,飞赞网,同志社交,同性交友,同志社区,彩虹社区,飞赞动态,基友交流">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, Arial, sans-serif;
+            background: #f4f6fb;
+            color: #2d2d33;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff4f81 40%, #c44dff 100%);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(255, 79, 129, 0.25);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 22px;
+            color: #ff4f81;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .logo-text {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .logo-text span {
+            font-weight: 300;
+            font-size: 18px;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 28px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .main-nav a {
+            padding: 6px 2px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .main-nav a:hover, .main-nav .active {
+            border-bottom-color: #fff;
+            opacity: 0.9;
+        }
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        .btn-header {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .btn-header:hover {
+            background: #fff;
+            color: #ff4f81;
+        }
+        .btn-signup {
+            background: #fff;
+            color: #ff4f81;
+            border: none;
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+        }
+        .btn-signup:hover {
+            background: #ffe3ec;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(160deg, #fff0f5 0%, #ffe4f0 50%, #f5e6ff 100%);
+            padding: 60px 0 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,79,129,0.1) 0%, transparent 70%);
+            top: -100px;
+            right: -80px;
+            border-radius: 50%;
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-text {
+            flex: 1 1 500px;
+        }
+        .hero-text h1 {
+            font-size: 44px;
+            font-weight: 800;
+            color: #333;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .hero-text h1 .gradient {
+            background: linear-gradient(135deg, #ff4f81, #c44dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-text p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 24px;
+            max-width: 560px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #ff4f81, #ff7a9c);
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 6px 20px rgba(255,79,129,0.35);
+            transition: 0.3s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(255,79,129,0.45);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ff4f81;
+            color: #ff4f81;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .btn-outline:hover {
+            background: #ff4f81;
+            color: #fff;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 36px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-num {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ff4f81;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #888;
+        }
+        .hero-visual {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+        .hero-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 30px 24px;
+            box-shadow: 0 20px 50px rgba(255,79,129,0.15);
+            max-width: 360px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .hero-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffb3c6, #c084fc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #fff;
+        }
+        .hero-card .card-header .name {
+            font-weight: 700;
+        }
+        .hero-card .card-header .time {
+            font-size: 12px;
+            color: #aaa;
+        }
+        .hero-card .card-content {
+            background: #f9f9fd;
+            border-radius: 14px;
+            padding: 16px;
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 14px;
+        }
+        .hero-card .card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .hero-card .card-tags span {
+            background: #f0e6ff;
+            color: #a855f7;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #222;
+            margin-bottom: 8px;
+        }
+        .section-title p {
+            color: #777;
+            font-size: 16px;
+        }
+        .section-title .line {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff4f81, #c44dff);
+            border-radius: 4px;
+            margin: 14px auto 0;
+        }
+
+        /* Features */
+        .features-section {
+            background: #fff;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+        }
+        .feature-card {
+            background: #fafaff;
+            border-radius: 20px;
+            padding: 28px 22px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 30px rgba(0,0,0,0.06);
+            border-color: #ffd6e5;
+        }
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #ffe0ec, #f0e0ff);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin: 0 auto 16px;
+        }
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Feed / 动态 */
+        .feed-section {
+            background: #f4f6fb;
+        }
+        .feed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .feed-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: 0.2s;
+            border: 1px solid #eee;
+        }
+        .feed-card:hover {
+            box-shadow: 0 10px 24px rgba(0,0,0,0.07);
+        }
+        .feed-card .user-line {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .feed-card .user-line .avatar {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+        .feed-card .user-line .uname {
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .feed-card .user-line .utime {
+            font-size: 12px;
+            color: #aaa;
+        }
+        .feed-card .feed-text {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        .feed-card .feed-img {
+            background: linear-gradient(135deg, #fdeff2, #e8f0fe);
+            height: 160px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .feed-card .feed-actions {
+            display: flex;
+            gap: 20px;
+            color: #999;
+            font-size: 14px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+        }
+        .feed-card .feed-actions span {
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .feed-card .feed-actions span:hover {
+            color: #ff4f81;
+        }
+
+        /* Topics */
+        .topics-section {
+            background: #fff;
+        }
+        .topics-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .topic-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fafaff;
+            padding: 18px 22px;
+            border-radius: 14px;
+            transition: 0.2s;
+            border-left: 4px solid transparent;
+        }
+        .topic-item:hover {
+            border-left-color: #ff4f81;
+            background: #fff0f5;
+        }
+        .topic-info h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #333;
+        }
+        .topic-info p {
+            font-size: 14px;
+            color: #888;
+            margin-top: 4px;
+        }
+        .topic-meta {
+            font-size: 13px;
+            color: #aaa;
+            text-align: right;
+        }
+        .topic-meta .count {
+            background: #ff4f81;
+            color: #fff;
+            border-radius: 20px;
+            padding: 2px 12px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* events */
+        .events-section {
+            background: linear-gradient(150deg, #fff0f5, #f5f0ff);
+        }
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .event-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+            transition: 0.2s;
+        }
+        .event-card:hover {
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+        .event-card .date {
+            background: linear-gradient(135deg, #ff4f81, #ff7a9c);
+            color: #fff;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .event-card h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+        .event-card p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: #fff;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            background: #fafaff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            border-left: 3px solid #ff4f81;
+        }
+        .faq-item h3 {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        .faq-item p {
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* CTA banner */
+        .cta-banner {
+            background: linear-gradient(135deg, #ff4f81, #c44dff);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .cta-banner h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        .cta-banner p {
+            font-size: 18px;
+            margin-bottom: 24px;
+            opacity: 0.9;
+        }
+        .btn-white {
+            background: #fff;
+            color: #ff4f81;
+            padding: 12px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .btn-white:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #1f1f2e;
+            color: #aaa;
+            padding: 40px 0 30px;
+            font-size: 14px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+        .footer-col a {
+            display: block;
+            padding: 4px 0;
+            transition: 0.2s;
+        }
+        .footer-col a:hover {
+            color: #ff4f81;
+        }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px;
+            }
+            .main-nav ul {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .header-actions {
+                margin-top: 4px;
+            }
+            .hero-text h1 {
+                font-size: 34px;
+            }
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text p {
+                margin: 0 auto 20px;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .section-title h2 {
+                font-size: 26px;
+            }
+            .container {
+                padding: 0 16px;
+            }
+        }
+        @media (max-width: 560px) {
+            .hero-text h1 {
+                font-size: 28px;
+            }
+            .btn-primary, .btn-outline {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .feed-grid {
+                grid-template-columns: 1fr;
+            }
+            .stat-num {
+                font-size: 22px;
+            }
+            .topic-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .topic-meta {
+                text-align: left;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">飞</div>
+                <div class="logo-text">飞赞<span> · 彩虹社区</span></div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">动态</a></li>
+                    <li><a href="#">话题</a></li>
+                    <li><a href="#">同城</a></li>
+                    <li><a href="#">活动</a></li>
+                    <li><a href="#">交友</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn-header">登录</a>
+                <a href="#" class="btn-signup">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>遇见真实的自己<br>找到同频的<span class="gradient">伙伴</span></h1>
+                    <p>飞赞是国内面向同志社群的综合社交平台，在这里你可以发表心情、分享日常、参与热门话题，也能通过同城功能认识身边的朋友。我们倡导真诚、友善与多元，让每一份不同都被温柔接纳。</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn-primary">立即加入飞赞</a>
+                        <a href="#" class="btn-outline">了解社区规则</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-num">100万+</div>
+                            <div class="stat-label">注册用户</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">50万+</div>
+                            <div class="stat-label">每日动态</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">1000+</div>
+                            <div class="stat-label">同城活动</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="card-header">
+                            <div class="avatar">晨</div>
+                            <div>
+                                <div class="name">晨曦</div>
+                                <div class="time">刚刚 · 上海</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            周末去看了彩虹展，真的很感动。希望更多人能理解我们，接纳自己。🌈
+                        </div>
+                        <div class="card-tags">
+                            <span>#彩虹</span>
+                            <span>#心路</span>
+                            <span>#上海</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section features-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>飞赞，为你而建</h2>
+                <p>一个安全、温暖、有归属感的同志线上家园</p>
+                <div class="line"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>真实动态</h3>
+                    <p>记录生活点滴，分享你的喜怒哀乐，与好友互动评论，让每一天都有回响。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>同城交友</h3>
+                    <p>基于地理位置的同城推荐，发现身边志趣相投的朋友，从线上到线下自然连接。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔥</div>
+                    <h3>热门话题</h3>
+                    <p>每天更新最热门的同志话题，从情感困惑到生活技巧，总有你想聊的。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎉</div>
+                    <h3>线下活动</h3>
+                    <p>飞赞同城会定期组织观影、聚餐、徒步等线下活动，让社群真实相遇。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section feed-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>此刻，大家在聊什么</h2>
+                <p>来自飞赞用户的真实声音</p>
+                <div class="line"></div>
+            </div>
+            <div class="feed-grid">
+                <div class="feed-card">
+                    <div class="user-line">
+                        <div class="avatar">小</div>
+                        <div>
+                            <div class="uname">小宇</div>
+                            <div class="utime">15分钟前 · 北京</div>
+                        </div>
+                    </div>
+                    <div class="feed-text">第一次向家人出柜，虽然他们还需要时间接受，但说出来之后心里轻松了很多。感谢飞赞上朋友们的鼓励！</div>
+                    <div class="feed-img">📄 配图：家人合照（示意）</div>
+                    <div class="feed-actions">
+                        <span>❤️ 128</span>
+                        <span>💬 45</span>
+                        <span>↗ 分享</span>
+                    </div>
+                </div>
+                <div class="feed-card">
+                    <div class="user-line">
+                        <div class="avatar">阿</div>
+                        <div>
+                            <div class="uname">阿凯</div>
+                            <div class="utime">1小时前 · 深圳</div>
+                        </div>
+                    </div>
+                    <div class="feed-text">有没有深圳的朋友周末一起爬山？天气超好，想认识新的朋友！</div>
+                    <div class="feed-img">🏔️ 配图：深圳梧桐山风景（示意）</div>
+                    <div class="feed-actions">
+                        <span>❤️ 56</span>
+                        <span>💬 23</span>
+                        <span>↗ 分享</span>
+                    </div>
+                </div>
+                <div class="feed-card">
+                    <div class="user-line">
+                        <div class="avatar">M</div>
+                        <div>
+                            <div class="uname">Michael</div>
+                            <div class="utime">2小时前 · 成都</div>
+                        </div>
+                    </div>
+                    <div class="feed-text">推荐一部很棒的同志电影《刻在你心底的名字》，看完久久不能平静。大家还有类似的片单吗？</div>
+                    <div class="feed-img">🎬 配图：电影海报（示意）</div>
+                    <div class="feed-actions">
+                        <span>❤️ 210</span>
+                        <span>💬 67</span>
+                        <span>↗ 分享</span>
+                    </div>
+                </div>
+                <div class="feed-card">
+                    <div class="user-line">
+                        <div class="avatar">林</div>
+                        <div>
+                            <div class="uname">林墨</div>
+                            <div class="utime">3小时前 · 杭州</div>
+                        </div>
+                    </div>
+                    <div class="feed-text">今天去做了HIV快速检测，结果是阴性。定期检测真的很重要，对自己和他人负责。</div>
+                    <div class="feed-img">💊 配图：检测试纸（示意）</div>
+                    <div class="feed-actions">
+                        <span>❤️ 342</span>
+                        <span>💬 88</span>
+                        <span>↗ 分享</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section topics-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>热门话题榜</h2>
+                <p>发现正在发生的讨论</p>
+                <div class="line"></div>
+            </div>
+            <div class="topics-list">
+                <div class="topic-item">
+                    <div class="topic-info">
+                        <h3># 出柜经验分享</h3>
+                        <p>过来人的心路历程与实用建议，帮你走好这一步。</p>
+                    </div>
+                    <div class="topic-meta">
+                        <span class="count">2.3万浏览</span>
+                        <div>1,204 讨论</div>
+                    </div>
+                </div>
+                <div class="topic-item">
+                    <div class="topic-info">
+                        <h3># 同志情侣日常</h3>
+                        <p>记录那些甜蜜、磨合与陪伴的瞬间，相信爱情。</p>
+                    </div>
+                    <div class="topic-meta">
+                        <span class="count">1.8万浏览</span>
+                        <div>986 讨论</div>
+                    </div>
+                </div>
+                <div class="topic-item">
+                    <div class="topic-info">
+                        <h3># 健身与自我提升</h3>
+                        <p>一起打卡，遇见更好的自己。</p>
+                    </div>
+                    <div class="topic-meta">
+                        <span class="count">1.5万浏览</span>
+                        <div>742 讨论</div>
+                    </div>
+                </div>
+                <div class="topic-item">
+                    <div class="topic-info">
+                        <h3># 彩虹电影推荐</h3>
+                        <p>高分同志影视剧安利，片荒不存在的。</p>
+                    </div>
+                    <div class="topic-meta">
+                        <span class="count">1.2万浏览</span>
+                        <div>655 讨论</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section events-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>近期同城活动</h2>
+                <p>走出屏幕，在现实中相遇</p>
+                <div class="line"></div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <span class="date">周六 14:00</span>
+                    <h3>北京 · 彩虹观影会</h3>
+                    <p>一起观看经典同志电影，映后自由交流，结识同城伙伴。</p>
+                </div>
+                <div class="event-card">
+                    <span class="date">周日 09:00</span>
+                    <h3>上海 · 滨江骑行</h3>
+                    <p>秋高气爽，来一场轻松的滨江骑行，拥抱自然与友谊。</p>
+                </div>
+                <div class="event-card">
+                    <span class="date">周六 19:00</span>
+                    <h3>广州 · 同志友好桌游夜</h3>
+                    <p>狼人杀、阿瓦隆等桌游局，新手友好，欢乐一整晚。</p>
+                </div>
+                <div class="event-card">
+                    <span class="date">周日 15:00</span>
+                    <h3>成都 · 彩虹分享沙龙</h3>
+                    <p>主题：自我接纳与心理健康，邀请嘉宾做真诚分享。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>关于飞赞，你可能想问</h2>
+                <div class="line"></div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>飞赞是一个什么样的平台？</h3>
+                    <p>飞赞是一个专注于同志群体的社交与内容分享社区。用户可以在平台上发表动态、参与话题讨论、结识新朋友，并获取同志相关的资讯与支持。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>使用飞赞是否收费？</h3>
+                    <p>飞赞的基础功能完全免费，包括注册、浏览动态、参与话题等。未来可能会推出部分增值服务（如虚拟礼物、会员标识等），但不会影响基本使用。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>如何保障用户隐私安全？</h3>
+                    <p>飞赞高度重视用户隐私。你可以自由设置个人资料的可见范围，动态可以分组可见或仅自己可见。平台严禁恶意骚扰与泄露他人隐私的行为。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>发现不当内容如何举报？</h3>
+                    <p>在动态、评论或个人主页均设有举报入口。你也可以通过官方邮箱或客服渠道反馈，我们会尽快处理并给予回复。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <h2>加入飞赞，找到你的彩虹家人</h2>
+            <p>无论你在哪里，都有一群温暖的人在这里等你。</p>
+            <a href="#" class="btn-white">立即注册</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>飞赞</h4>
+                    <a href="#">关于我们</a>
+                    <a href="#">加入团队</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">媒体报道</a>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与服务</h4>
+                    <a href="#">帮助中心</a>
+                    <a href="#">社区规范</a>
+                    <a href="#">隐私政策</a>
+                    <a href="#">用户协议</a>
+                </div>
+                <div class="footer-col">
+                    <h4>特色功能</h4>
+                    <a href="#">同城交友</a>
+                    <a href="#">热门话题</a>
+                    <a href="#">线下活动</a>
+                    <a href="#">彩虹资讯</a>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <a href="#">官方微博</a>
+                    <a href="#">微信公众号</a>
+                    <a href="#">抖音号</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 飞赞 Feizan.com 版权所有 · 让每一份不同都被温柔接纳</p>
+            </div>
+        </div>
+    </footer>
+</body>
+                      </html>
